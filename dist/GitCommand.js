@@ -9,7 +9,7 @@ class GitCommand {
   gitResetDotBtn = document.getElementById("git-reset-dot");
   gitCheckoutDotBtn = document.getElementById("git-checkout-dot");
 
-  repoList = document.getElementById("repo-options");
+  repoId = document.getElementById("repo-id");
 
   constructor(url) {
     this.url = url;
@@ -168,7 +168,7 @@ class GitCommand {
           versionIds: versionIds,
           commit_message: command_split[3].replace(/['"]/g, ""),
           date_time: new Date(),
-          repository_id: this.repoList.value,
+          repository_id: this.repoId.value,
         };
         const response = await fetch(`${this.url}/commits`, {
           method: "POST",
@@ -310,7 +310,7 @@ class GitCommand {
   deleteCommit(step) {
     const requestURL = `${this.url}/commits/bulk`;
     const data = {
-      repository_id: this.repoList.value,
+      repository_id: this.repoId.value,
       step: step,
     };
     const requestObj = {

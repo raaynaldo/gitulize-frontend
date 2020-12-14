@@ -21,7 +21,8 @@
 
 <body>
     <div class="ui container">
-        <form id="repo-form-selector">
+        <input type="hidden" id="repo-id">
+        <!-- <form id="repo-form-selector">
             <select class="ui dropdown" id="repo-options" name="repo">
                 <option disabled selected>Select a repository</option>
             </select>
@@ -43,8 +44,8 @@
                     </div>
                 </div>
             </form>
-        </div>
-
+        </div> -->
+        <button class="ui red button" id="clear-all">Clear All</button>
         <form id="doc-form">
             <div class="ui input focus">
                 <input name="fileName" type="text" placeholder="Create a file name...">
