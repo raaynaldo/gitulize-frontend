@@ -161,8 +161,8 @@ class GitCommand {
       quotes.includes(command_split[3][command_split[3].length - 1]) &&
       command_split[2] == "-m"
     ) {
-      const childArray = Array.from(this.stagingArea.childNodes);
-      const versionIds = childArray.map((elm) => elm.dataset.versionId);
+      const stageDirList = [...this.stagingArea.querySelectorAll(".item")];
+      const versionIds = stageDirList.map((list) => list.dataset.versionId);
       if (versionIds.length > 0) {
         const commitData = {
           versionIds: versionIds,

@@ -128,7 +128,9 @@ class Visualize {
   renderGitLists() {
     fetch(`${this.url}/repositories`)
       .then((res) => res.json())
-      .then((data) => this.createListItems(data));
+      .then((data) => {
+        console.log(data)
+        this.createListItems(data)});
   }
 
   createListItems(json) {
