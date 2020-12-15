@@ -201,7 +201,6 @@ class GitCommand {
 
         this.addTerminalCommand(command);
       } else if (!head[1] || head[1] == 0) {
-        console.log("HEAD");
         //Do Nothing
         this.addTerminalCommand(command);
       } else {
@@ -220,8 +219,6 @@ class GitCommand {
 
     let divContent = document.createElement("div");
     divContent.className = "content";
-    console.log(commit)
-    console.log(commit.date_time);
     divContent.innerHTML = `
     <a class="header">${commit.commit_message}</a>
     <div class="description">${commit.date_to_s}</div>
@@ -300,7 +297,6 @@ class GitCommand {
   }
 
   removeListsToOtherArea(list, ids) {
-    console.log()
     let deletedList = list.filter(function (div) {
       return ids.includes(+div.dataset.versionId);
     });
@@ -322,15 +318,15 @@ class GitCommand {
   }
 
   removeCommitList(response, commitList, stagingList) {
-    console.log(response, commitList);
+    // console.log(response, commitList);
     //TODO: Continue here
     response.commit_ids.forEach(function (commit_id) {
       let commit = commitList.find(function (cL) {
-        console.log({ cL, value: cL.querySelector("div").id, commit_id });
+        // console.log({ cL, value: cL.querySelector("div").id, commit_id });
         return cL.dataset.id == commit_id;
       });
-      console.log(commitList);
-      console.log(commit);
+      // console.log(commitList);
+      // console.log(commit);
       commit.remove();
     });
 

@@ -55,7 +55,6 @@ class Visualize {
 
   createDocument() {
     this.fileForm.addEventListener("submit", (event) => {
-      console.log(event);
       event.preventDefault();
       const name = event.target.fileName.value.replace(" ", "");
       const repoId = document.getElementById("repo-id").value;
@@ -133,7 +132,6 @@ class Visualize {
   }
 
   createListItems(json) {
-    console.log(json);
     document.getElementById("repo-id").value = json.repo_id;
     const listsCreated = {};
     json.documents.forEach((object) => {
